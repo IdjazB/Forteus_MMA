@@ -3,6 +3,7 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 import datetime
 from datetime import timedelta
+import openpyxl
 
 st.set_page_config(
     # Set page configuration
@@ -38,7 +39,7 @@ def main():
 def show_events():
     #EVENTS
     # Read the Excel file into a pandas DataFrame
-    df_events = pd.read_excel("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/mma_reporting/output.xlsx")
+    df_events = pd.read_excel("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/mma_reporting/output.xlsx",engine='openpyxl')
 
     column_name_mapping_events = {
         'STARTDATE': 'Date',
@@ -178,7 +179,7 @@ def show_events():
 def show_tasks():
     #TASKS
     # Read the Excel file into a pandas DataFrame
-    df_tasks = pd.read_excel("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/mma_reporting/output2.xlsx")
+    df_tasks = pd.read_excel("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/mma_reporting/output2.xlsx",engine='openpyxl')
 
     column_name_mapping_tasks = {
         'AssignedTo': 'Assigned To',
@@ -316,7 +317,7 @@ def show_tasks():
 
 def show_selection_status():
     # Read the DataFrame from the Excel file
-    df_selection = pd.read_excel("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/mma_reporting/output1.xlsx")
+    df_selection = pd.read_excel("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/mma_reporting/output1.xlsx",engine='openpyxl')
     column_name_mapping_selection = {
         'ALIAS': 'Funds',
         'ISOSTATUS': 'Selection Status',
