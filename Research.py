@@ -189,11 +189,13 @@ def show_events():
             filtered_df_events = filter_dataframe_events(filtered_df_events, start_date_events, end_date_events, interaction_events, category_filter_events) #selection, interaction, category_filter)
             # Drop the "Category" column from the filtered DataFrame
             filtered_df_events.drop(columns=['Category'], inplace=True)
-
+            filtered_df_events['Date'] = filtered_df_events['Date'].dt.strftime('%b-%d-%y')
+            
             st.write("Events:")
             st.dataframe(filtered_df_events, hide_index=True)
         else:
             filtered_df_events.drop(columns=['Category'], inplace=True)
+            filtered_df_events['Date'] = filtered_df_events['Date'].dt.strftime('%b-%d-%y')
             # If no filters are selected, display the full DataFrame
             st.write("Events:")
             st.dataframe(filtered_df_events, hide_index=True)
@@ -342,6 +344,7 @@ def show_tasks():
         if assignedto_tasks or category_filter_tasks or status_tasks:
             filtered_df_tasks = filter_dataframe_tasks(filtered_df_tasks, assignedto_tasks, category_filter_tasks, status_tasks) #selection, interaction, category_filter)
             filtered_df_tasks_dropped = filtered_df_tasks.drop(columns=['Category','Start Date'])
+            filtered_df_tasks_dropped['Due Date'] = filtered_df_tasks_dropped['Due Date'].dt.strftime('%b-%d-%y')
 
             styled_df = filtered_df_tasks_dropped.style.apply(highlight_row_by_status, axis=1)
 
@@ -350,6 +353,7 @@ def show_tasks():
 
         else:
             filtered_df_tasks_dropped = filtered_df_tasks.drop(columns=['Category','Start Date'])
+            filtered_df_tasks_dropped['Due Date'] = filtered_df_tasks_dropped['Due Date'].dt.strftime('%b-%d-%y')
             styled_df = filtered_df_tasks_dropped.style.apply(highlight_row_by_status, axis=1)
 
             st.write("Tasks:")
@@ -510,6 +514,7 @@ def show_selection_status():
         final_df_selection = pd.concat([status_changed, status_unchanged])
         final_df_selection.sort_values(by=['Funds', 'Date'], inplace=True)
         final_df_selection['Date'] = final_df_selection['Date'].dt.date
+        final_df_selection['Date'] = final_df_selection['Date'].dt.strftime('%b-%d-%y')
         final_df_selection = final_df_selection[["Funds", "Previous Status", "Selection Status", "Date"]]
         final_df_selection = final_df_selection.reset_index(drop=True)
         styled_final_df_selection = final_df_selection.style.apply(highlight_row_by_status_selection, axis=1)
