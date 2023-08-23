@@ -10,9 +10,9 @@ from pathlib import Path
 import validators
 import base64
 
-#st.set_page_config(
+st.set_page_config(
     # Set page configuration
-    #page_title="MMA", layout="wide")
+    page_title="MMA", layout="wide")
     
 #st.sidebar.image("https://forteus-media-research.s3.eu-west-1.amazonaws.com/public/images/Final+Logo+Forteus+by+Numeus+light.png")
 
