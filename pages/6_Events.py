@@ -414,7 +414,7 @@ with tab1:
         return summed_dataframe1
     
     def load_value_locked_data():
-        url24 = "https://www.theblock.co/api/charts/chart/decentralized-finance/total-value-locked-tvl/value-locked-by-blockchain"
+        url24 = "https://www.theblock.co/api/charts/chart/decentralized-finance/total-value-locked-tvl/total-value-locked-by-category"
         r24 = session6.get(url24)
         r_json24 = r24.json()
 
