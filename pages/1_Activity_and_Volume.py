@@ -52,7 +52,7 @@ st.title('Activity and Volume')
 
 
 # Define the selectbox and clear cache button
-selected_range = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M", "1Q", "1Y"])
+selected_range1 = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M", "1Q", "1Y"])
 
 if st.sidebar.button("Clear Cache"):
     # Clears all st.cache_resource caches:
@@ -331,7 +331,7 @@ with tab1:
     
     #@st.cache_data(ttl=3600)
     def main5():
-        global selected_range
+        global selected_range1
 
         plot8, dex_to_cex_spot_table = create_plot8()
         plot16, monthly_exchange_volume_table = create_plot16()
@@ -356,7 +356,7 @@ with tab1:
 
         for plot, title in plots_and_titles:
             plot.update_xaxes(
-                range=button_ranges_combined[selected_range],
+                range=button_ranges_combined[selected_range1],
                 tickformat=tickformat
             )
 
@@ -1174,7 +1174,7 @@ with tab2:
         return fig28, volume_eth_futures_table
     
     def main3():
-        global selected_range
+        global selected_range1
 
         plot18, open_interest_btc_futures_table = create_plot18()
         plot19, open_interest_eth_futures_table = create_plot19()
@@ -1206,7 +1206,7 @@ with tab2:
 
         for plot, title in plots_and_titles:
             plot.update_xaxes(
-                range=button_ranges_combined[selected_range],
+                range=button_ranges_combined[selected_range1],
                 tickformat=tickformat
             )
 
@@ -1400,7 +1400,7 @@ with tab3:
     
     #@st.cache_data(ttl=3600)
     def main2():
-        global selected_range
+        global selected_range1
 
         plot3, btc_transactions_table = create_plot3()
         plot4, eth_transactions_table  = create_plot4()
@@ -1424,7 +1424,7 @@ with tab3:
 
         for plot, title in plots_and_titles:
             plot.update_xaxes(
-                range=button_ranges_combined[selected_range],
+                range=button_ranges_combined[selected_range1],
                 tickformat=tickformat
             )
 
