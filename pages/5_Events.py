@@ -611,7 +611,7 @@ with tab1:
         # Use Streamlit's selectbox to create a single set of buttons
         # Add empty space to move the buttons further down
 
-        selected_range = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M"])
+        selected_range5 = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M"])
 
         # Create a selectbox to choose between BTC and ETH
         selected_asset = st.sidebar.selectbox("Asset (Funding Rate):", ["BTCUSDT", "ETHUSDT"])
@@ -642,10 +642,10 @@ with tab1:
         "1M": [datetime.datetime.now() - datetime.timedelta(days=30), datetime.datetime.now()]
         }
 
-        combined_plot.update_xaxes(range=button_ranges_combined[selected_range])
-        combined_plot1.update_xaxes(range=button_ranges_combined[selected_range])
-        combined_plot2.update_xaxes(range=button_ranges_combined[selected_range])
-        combined_plot3.update_xaxes(range=button_ranges_combined[selected_range])
+        combined_plot.update_xaxes(range=button_ranges_combined[selected_range5])
+        combined_plot1.update_xaxes(range=button_ranges_combined[selected_range5])
+        combined_plot2.update_xaxes(range=button_ranges_combined[selected_range5])
+        combined_plot3.update_xaxes(range=button_ranges_combined[selected_range5])
 
         # Display the plots
         st.plotly_chart(combined_plot)
