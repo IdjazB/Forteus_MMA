@@ -1,0 +1,13 @@
+credentials:
+  usernames:
+    idjazb:
+      email: idjaz@numeus.xyz
+      name: Idjaz Burthen
+      password: $2b$12$XRV7fx.15zML845rknKp..e7C4BOToUfhSQW8LE9qRFB6CmqobC6W # To be replaced with hashed password
+    tchladek:
+      email: thomas@numeus.xyz
+      name: Thomas Chladek
+      password: $2b$12$sa60r763lxFvT3s3.TMn0OOThy3IurlIOo1fmHN3PlOnc4Ww8I2fO # To be replaced with hashed password
+cookie:
+  key: forteus # Must be string
+  name: streamlitdashboard
