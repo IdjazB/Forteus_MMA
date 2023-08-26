@@ -740,7 +740,7 @@ def create_plot26():
 #@st.cache_data(ttl=3600)
 def main8():
 
-    selected_range = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M", "1Q", "1Y"])
+    selected_range4 = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M", "1Q", "1Y"])
 
     if st.sidebar.button("Clear Cache"):
         # Clears all st.cache_resource caches:
@@ -782,7 +782,7 @@ def main8():
 
     for plot, title in plots_and_titles:
         plot.update_xaxes(
-            range=button_ranges_combined[selected_range],
+            range=button_ranges_combined[selected_range4],
             tickformat=tickformat
         )
 
