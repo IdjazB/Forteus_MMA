@@ -393,7 +393,7 @@ def create_plot15():
 #@st.cache_data(ttl=3600)
 def main7():
 
-    selected_range = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M", "1Q", "1Y"])
+    selected_range3 = st.sidebar.selectbox("Select Timeframe:", ["All", "1W", "1M", "1Q", "1Y"])
 
     if st.sidebar.button("Clear Cache"):
         # Clears all st.cache_resource caches:
@@ -439,7 +439,7 @@ def main7():
             y_position = 0.95  # Adjust the y position for plot9
 
         plot.update_xaxes(
-            range=button_ranges_combined[selected_range],
+            range=button_ranges_combined[selected_range3],
             tickformat=tickformat
         )
 
